@@ -21,7 +21,7 @@ class Solution{
 
 	int[] preSum = new int[N];
 
-	updatePrefix(A, N);
+	updatePrefix(A, preSum);
 
 	for(int i = 0; i < A.length; i++){
 		for(int j = i; j < A.length; j++){
@@ -43,5 +43,13 @@ class Solution{
 	
 	Collections.sort(result, (a, b) - > a[0] - b[0]);
 	return result.toArray();
-
+	}
+	
+	public void updatePrefixSum(int [] A, int[] prefixxSum){
+		
+		for(int i = 0; i < prefixSum.length; i++){
+			if(i == 0) prefixSum[i] = A[i];
+			else prefixSum[i] = prefixSum[i-1] + A[i];
+		}
+	}
 }
